@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>WEB1 - javaScript</title>
+<meta charset="utf-8">
+  <link rel="stylesheet" href="/css/master.css">
+  <script>
+
+    function LinksSetColor(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color = color;
+          i = i + 1;
+      }
+    }
+
+    var Body = {
+      function setColor(color){
+        document.querySelector('body').style.color = color;
+      },
+      function setBackgroundColor(color){
+        document.querySelector('body').style.backgroundColor = color;
+      }
+    }
+    function nightDayHander(self){
+      var target = document.querySelector('body');
+      if(self.value === 'night'){
+        Body.setBackgroundColor('black')
+        Body.setColor('white');
+        self.value = 'day';
+        Links.setColor('powderblue');
+
+      } else {
+        Body.setBackgroundColor('white')
+        Body.setColor('black');
+        self.value = 'night';
+
+        Links.setColor('blue');
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHander(this);
+  ">
+    <ol>
+      <li><a href="1.html">html</a></li>
+      <li><a href="2.html">css</a></li>
+      <li><a href="3.html">javaScript</a></li>
+    </ol>
+
+  <div id="article">
+  <h2>javaScript</h2>
+    <p>
+       JavaScript는 가볍고, 인터프리터를 사용하는 프로그래밍 언어입니다. 웹 브라우저는 JavaScript 코드를 원문 텍스트 형식으로 입력받아 실행합니다
+    </p>
+</body>
+</html>
